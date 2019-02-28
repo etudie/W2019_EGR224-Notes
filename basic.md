@@ -1,9 +1,15 @@
 [Creating a new project](#vivado-introduction)
-Adding schematic comp lib 
-Create Block Design Schematic 
-Create HDL Wrapper 
-Compile Project via Sythesis
-Simulation of Stimulus (TestBench)
+
+[Adding schematic comp lib](#vivado-introduction)
+
+[Create Block Design Schematic ](#vivado-introduction)
+
+[Create HDL Wrapper ](#vivado-introduction)
+
+[Compile Project via Sythesis](#vivado-introduction)
+
+[Simulation of Stimulus (TestBench)](#vivado-introduction)
+
 
 ## Vivado Introduction 
 **Vivado 2017.2** is a program from Xilinx that supports digital circuit design and simulation.
@@ -26,7 +32,7 @@ Simulation of Stimulus (TestBench)
 ![](https://i.imgur.com/gVVRXuV.png)
 1. Create Block Design, add blocks, save 
 2. Make **External** vs **Port**
-
+3. Set Propogation to Zero
 
 ## Create HDL Wrapper 
 ![](https://i.imgur.com/fydGjdR.png)
@@ -39,19 +45,26 @@ Simulation of Stimulus (TestBench)
 1. Click **cancel** when sythesis complete
 
 ## Simulation of Stimulus (TestBench)
+In the **Design Module** Window, we list the inputs and outputs
 1. Select **Add or Create Simulation**
 2. **Define Module**
-In the **Design Module** Window, we list the inputs and outputs
-
 ![](https://i.imgur.com/S52gvZs.png)
-![](https://i.imgur.com/qspp8DF.png)
 
-
-1. Click add sources 
 ## Add simulation sources 
-propoagation delay send to 0, set delay 
+1. Edit the testbench file
 
-Synthesis complete
+| code | explanation |
+|----------|:-------------:|
+| 'timescale | set time increments |
+| reg | input variable |
+| wire | output variable | 
+| #20 | hold command for 20 time steps | 
+| initial begin | begins | 
+| end | ends the block since initial begin | 
+| always | doesn't rely on initial begin | 
+| initial #1000 $finish | ends after 1000 cycles | 
+| endmodule | end of testbench file | 
 
 ![](https://i.imgur.com/7BPSKwS.png)
 ![](https://i.imgur.com/Oahm1CI.png)
+## Troubleshooting
