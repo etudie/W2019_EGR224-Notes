@@ -68,3 +68,27 @@ In the **Design Module** Window, we list the inputs and outputs
 ![](https://i.imgur.com/7BPSKwS.png)
 ![](https://i.imgur.com/Oahm1CI.png)
 ## Troubleshooting
+![](https://i.imgur.com/EOHOjuw.png)
+## BASYS 3 Configuration
+The seven-segment LED display on the BASYS-3 board is already connected to several pins on the XC7A35T1CPG236C FPGA. The pin assignments are shown in Table 1. You will have to tell Xilinx Vivado that the seven outputs of your schematic ‘a’ through ‘g’ should be mapped to these pins. Similarly, the three inputs to your schematic will be mapped to Switches, which are connected to the FPGA pins as shown in Table 2.
+## Assigning Pins
+1. **Add Sources** under **Flow Navigator** pane. **Add Constraints**, then click **Next**. THen click on **create file** option. Under **File Name**, click **ok** and **finished**. Encounter **pins.xdc** file, 
+2. In top level Verilog File under **sources** pane and click on **Run Synthesis**. In **Launch Runs**, keep default settings and click **cancel**
+3. Click on **Open Elaborated Design**. A window appears, click **OK**. In **Layout -> I/O Plannin**. THis creates a new tab called **I/O Ports** next to Console Window. Expand Scalar ports and you will see all the inputs and outputs of your desifn. 
+4. **Package Pin**. Assign pics. Hit **Enter** to save changes. Check next to that pin under colunn "Oin"
+5. Under **I/O STD** change to **LVCMOS33**. 
+6. Save as existing file. Close **Elaborated Design** window. 
+7. **Generate Bitstream** to create the bitstream. Once the bitstream generated. Launch Runs Window, click on Ok. 
+## Using Diligent 
+1. Start -> Programs -> Digilent -> Adept 
+2. Find the bit file and select **program*
+
+![](https://i.imgur.com/vsHh0nj.png)
+![](https://i.imgur.com/QpEVjc7.png)
+![](https://i.imgur.com/Oahm1CI.png)
+![](https://i.imgur.com/q1E4Ix9.png)
+![](https://i.imgur.com/2svo4Ne.png)
+![](https://i.imgur.com/1ciMEi9.png)
+![](https://i.imgur.com/PWrv3gB.png)
+![](https://i.imgur.com/hg1yWkB.png)
+![](https://i.imgur.com/uu1VcXP.png)
